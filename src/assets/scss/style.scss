@@ -6,11 +6,232 @@
 
 body {
     font-family: 'roboto', sans-serif;
-    background: #f0f8ff;
+    background: #e1eef8;
+    margin: 0;
 }
 
 .container {
     max-width: 1200px;
     padding: 0 10px;
     margin: 0 auto;
+}
+
+.control-wrapper {
+    margin: 20px 0 0 0;
+}
+.location {
+    display: flex;
+    column-gap: 10px;
+}
+.btn {
+    cursor: pointer;
+    background: #318affad;
+    border: none;
+    min-width: 100px;
+    padding: 5px 10px;
+    color: #ffffff;
+    border: 2px solid #318affad;
+    border-radius: 5px;
+    font-weight: 600;
+    box-shadow: 0px 0px 3px 0px #318affad;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    &:hover {
+        background: #318aff8c;
+    }
+
+    &_main {
+        background: #9c3000ad;
+        border: 2px solid #9c3000ad;
+        box-shadow: 0px 0px 3px 0px #000000ad;
+        &:hover {
+            background: #9c2f008c;
+        }
+    }
+}
+.control {
+
+		margin-top: 50px;
+
+		&__input-wrapper {
+            margin: 10px 0;
+            display: flex;
+            column-gap: 10px;
+		}
+
+		// .control__input-text
+
+		&__input-text {
+            background: #ffffff;
+            padding: 5px 10px;
+            color: #318affb2;
+            border: 2px solid #318affad;
+            border-radius: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.2s;
+            &:focus {
+                outline: none;
+                background: #fff;
+            }
+            &::placeholder {
+                color: #3838388c;
+            }
+		}
+
+		// .control__input-color
+
+		&__input-color {
+            width: 30px;
+            border: none;
+            border-radius: 5px;
+            background: #ffffff;
+		}
+
+		// .control__main-btns
+
+		&__main-btns {
+            margin: 10px 0;
+            display: flex;
+            column-gap: 7px;
+		}
+}
+.list {
+
+		margin-top: 60px;
+
+		&__title {
+            font-size: 24px;
+            font-weight: 600;
+            display: flex;
+            padding: 3px;
+            background: #69abfd;
+            color: white;
+            justify-content: center;
+            border-radius: 5px;
+		}
+
+		// .list__page
+
+		&__page {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 12px 0;
+            color: #262626;
+		}
+
+		// .list__cars
+
+		&__cars {
+		}
+}
+.car-elem {
+
+		// .car-elem__controls
+
+		&__controls {
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
+		}
+
+		// .car-elem__name
+
+		&__name {
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ffffff, 0 0 15px #ffffff, 0 0 20px #ffffff, 0 0 35px #ffffff, 0 0 75px #ffffff;
+            color: #b26e50;
+            font-size: 18px;
+            font-weight: 600;
+            margin-left: 15px;
+		}
+
+		// .car-elem__race
+
+		&__race {
+            display: flex;
+            margin-top: 15px;
+            justify-content: space-between;
+            column-gap: 15px;
+		}
+
+		// .car-elem__start
+
+		&__start {
+            display: flex;
+            position: relative;
+            width: 100%;
+            height: 50px;
+            justify-content: space-between;
+            align-items: center;
+            background: center/contain repeat url(http://localhost:4000/assets/road.png);
+		}
+
+        &__btns {
+            display: flex;
+            justify-content: space-between;
+            column-gap: 10px;
+            align-items: center;
+		}
+
+		// .car-elem__btn
+
+		&__btn {
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+            background: #8bc34a96;
+            border: none;
+            padding: 5px 10px;
+            color: #ffffff;
+            border: 2px solid #8bc34a;
+            border-radius: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.2s;
+            &_red {
+                background: #c35a4a96;
+                border: 2px solid #c35a4a96;
+            }
+            &:hover {
+                filter: brightness(1.2);
+            }
+		}
+
+		// .car-elem__car
+
+		&__car {
+            width: 70px;
+            margin-top: 5px;
+            img {
+                width: 100%;
+            }
+		}
+
+		// .car-elem__finish
+
+		&__finish {
+            width: 50px;
+            position: absolute;
+            right: 115px;
+            top: -10px;
+            img {
+                width: 100%;
+            }
+		}
+
+		// .car-elem__road
+
+		&__road {
+            width: 100%;
+            position: absolute;
+            height: 50px;
+            z-index: -1;
+            background: center / contain repeat url('../img/road.png');
+
+		}
+}
+.pagination {
+    margin-top: 60px;
+    display: flex;
+    column-gap: 10px;
 }
