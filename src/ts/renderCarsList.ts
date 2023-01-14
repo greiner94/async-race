@@ -11,8 +11,8 @@ function renderCarsList() {
       carsHtml += `
       <div class="car-elem">
         <div class="car-elem__controls">
-          <button class="btn">select</button>
-          <button class="btn">remove</button>
+          <button class="btn btn_select">select</button>
+          <button class="btn btn_remove">remove</button>
           <div class="car-elem__name">${car.name}</div>
         </div>
         <div class="car-elem__race">
@@ -34,7 +34,6 @@ function renderCarsList() {
     });
     carsWrapper.innerHTML = carsHtml;
     document.querySelector('.car-elem__car img');
-    console.log(document.querySelector('.car-elem__car img'));
   });
 }
 
