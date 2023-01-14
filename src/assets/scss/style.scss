@@ -39,6 +39,13 @@ body {
     &:hover {
         background: #318aff8c;
     }
+    &:disabled {
+        background:#3838388c;
+        border: 2px solid #3838388c;
+        box-shadow: 0px 0px 3px 0px #3838388c;
+        color: #3838388c;
+        cursor: default;
+    }
 
     &_main {
         background: #9c3000ad;
@@ -79,6 +86,7 @@ body {
             }
             &:disabled {
                 background: #3838388c;
+                border: 2px solid #3838388c;
             }
 		}
 

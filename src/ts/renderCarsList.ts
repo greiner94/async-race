@@ -3,6 +3,7 @@ import carImg from './carImg';
 import removeCarFromList from './removeCarFromList';
 import getAllCars from './services/getAllCars';
 import { Icar } from './types';
+import updateCarFromList from './updateCarFromList';
 
 function renderCarsList() {
   const carsWrapper = document.querySelector('.list__cars') as HTMLElement;
@@ -35,6 +36,7 @@ function renderCarsList() {
     });
     carsWrapper.innerHTML = carsHtml;
     removeCarFromList();
+    updateCarFromList();
   });
 }
 

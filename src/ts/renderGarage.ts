@@ -16,7 +16,7 @@ function renderGarage() {
         <form class="control__input-wrapper" id="form-update">
           <input type="text" disabled class="control__input-text" placeholder="car name"></input>
           <input type="color" disabled class="control__input-color"></input>
-          <button type="submit" class="btn">update</button>
+          <button type="submit" disabled class="btn">update</button>
         </form>
         <div class="control__main-btns">
           <button class="btn btn_main">race</button>
