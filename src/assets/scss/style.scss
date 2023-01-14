@@ -77,15 +77,23 @@ body {
             &::placeholder {
                 color: #3838388c;
             }
+            &:disabled {
+                background: #3838388c;
+            }
 		}
 
 		// .control__input-color
 
 		&__input-color {
+            cursor: pointer;
             width: 30px;
             border: none;
             border-radius: 5px;
             background: #ffffff;
+            &:disabled {
+                background: #3838388c;
+                cursor: default;
+            }
 		}
 
 		// .control__main-btns
