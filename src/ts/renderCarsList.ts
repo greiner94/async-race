@@ -2,6 +2,7 @@ import finishImg from '../assets/img/finish.png';
 import carImg from './carImg';
 import removeCarFromList from './removeCarFromList';
 import getAllCars from './services/getAllCars';
+import startStopCar from './startStopCar';
 import { Icar } from './types';
 import updateCarFromList from './updateCarFromList';
 
@@ -22,8 +23,8 @@ function renderCarsList() {
         </div>
         <div class="car-elem__race">
           <div class="car-elem__btns">
-            <button class="car-elem__btn">A</button>
-            <button class="car-elem__btn car-elem__btn_red">B</button>
+            <button class="car-elem__btn car-elem__btn_start">A</button>
+            <button disabled class="car-elem__btn car-elem__btn_stop">B</button>
           </div>
           <div class="car-elem__start">
             <div class="car-elem__car">
@@ -42,6 +43,7 @@ function renderCarsList() {
     (document.querySelector('.list__title') as HTMLElement).innerHTML = `Garage (${carsAmount})`;
     removeCarFromList();
     updateCarFromList();
+    startStopCar();
   });
 }
 

@@ -3,3 +3,7 @@ export interface Icar {
   color: string;
   id: number;
 }
+export interface IstartEngine {
+  velocity: number;
+  distance: number;
+}

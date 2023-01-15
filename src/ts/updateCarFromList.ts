@@ -34,7 +34,6 @@ function updateCarFromList() {
     const carId = Number(submitBtn.getAttribute('data-id'));
     updateCar(carId, nameInput.value, colorInput.value).then(() => (nameInput.value = ''));
     renderCarsList();
-    startEngine(carId, 'started').then((res) => console.log(res));
   });
 }
 

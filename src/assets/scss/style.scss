@@ -179,6 +179,7 @@ body {
             height: 50px;
             justify-content: space-between;
             align-items: center;
+            border-radius: 4px;
             background: center/contain repeat url(http://localhost:4000/assets/road.png);
 		}
 
@@ -204,18 +205,27 @@ body {
             font-weight: 600;
             text-transform: uppercase;
             transition: all 0.2s;
-            &_red {
+            &_stop {
                 background: #c35a4a96;
                 border: 2px solid #c35a4a96;
             }
             &:hover {
                 filter: brightness(1.2);
             }
+            &:disabled {
+                cursor: default;
+                background: #3838388c;
+                border: 2px solid #3838388c;
+                &:hover {
+                    filter: none;
+                }
+            }
 		}
 
 		// .car-elem__car
 
 		&__car {
+            position: absolute;
             width: 70px;
             height: 70px;
             margin: 0px 10px;
