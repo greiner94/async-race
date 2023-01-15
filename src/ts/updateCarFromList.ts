@@ -1,5 +1,6 @@
 import renderCarsList from './renderCarsList';
 import getCar from './services/getCar';
+import startEngine from './services/startEngine';
 import updateCar from './services/updateCar';
 
 function updateCarFromList() {
@@ -33,6 +34,7 @@ function updateCarFromList() {
     const carId = Number(submitBtn.getAttribute('data-id'));
     updateCar(carId, nameInput.value, colorInput.value).then(() => (nameInput.value = ''));
     renderCarsList();
+    startEngine(carId, 'started').then((res) => console.log(res));
   });
 }
 

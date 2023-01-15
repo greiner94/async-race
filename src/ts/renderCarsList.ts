@@ -7,8 +7,11 @@ import updateCarFromList from './updateCarFromList';
 
 function renderCarsList() {
   const carsWrapper = document.querySelector('.list__cars') as HTMLElement;
+  let carsAmount = 0;
   let carsHtml = '';
+
   getAllCars().then((res: Icar[]) => {
+    carsAmount = res.length;
     res.forEach(({ id, name, color }) => {
       carsHtml += `
       <div class="car-elem" data-id="${id}">
@@ -35,6 +38,8 @@ function renderCarsList() {
       `;
     });
     carsWrapper.innerHTML = carsHtml;
+
+    (document.querySelector('.list__title') as HTMLElement).innerHTML = `Garage (${carsAmount})`;
     removeCarFromList();
     updateCarFromList();
   });
