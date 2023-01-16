@@ -1,5 +1,6 @@
 import finishImg from '../assets/img/finish.png';
 import carImg from './carImg';
+import pagination from './pagination';
 import removeCarFromList from './removeCarFromList';
 import getAllCars from './services/getAllCars';
 import startStopCar from './startStopCar';
@@ -13,7 +14,7 @@ function renderCarsList() {
 
   getAllCars().then((res: Icar[]) => {
     carsAmount = res.length;
-    res.forEach(({ id, name, color }) => {
+    res.reverse().forEach(({ id, name, color }) => {
       carsHtml += `
       <div class="car-elem" data-id="${id}">
         <div class="car-elem__controls">
@@ -40,9 +41,10 @@ function renderCarsList() {
     });
     carsWrapper.innerHTML = carsHtml;
 
-    (document.querySelector('.list__title') as HTMLElement).innerHTML = `Garage (${carsAmount})`;
+    (document.querySelector('.list__title span') as HTMLElement).textContent = carsAmount.toString();
     removeCarFromList();
     updateCarFromList();
+    pagination();
     startStopCar();
   });
 }

@@ -26,13 +26,13 @@ function renderGarage() {
       </div>
     </div>
     <div class="list">
-      <div class="list__title">Garage (5)</div>
-      <div class="list__page">Page #1</div>
+      <div class="list__title">Garage (<span>0</span>)</div>
+      <div class="list__page">Page #<span>1</span></div>
       <div class="list__cars">
       </div>
-      <div class="pagination">
-        <button class="btn">prev</button>
-        <button class="btn">next</button>
+      <div class="pagination" id="cars-pagination">
+        <button class="btn btn_back">< back</button>
+        <button class="btn  btn_next">next ></button>
       </div>
     </div>
   </div>
