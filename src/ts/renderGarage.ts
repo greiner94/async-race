@@ -21,7 +21,7 @@ function renderGarage() {
         <div class="control__main-btns">
           <button class="btn btn_main">race</button>
           <button class="btn btn_main">reset</button>
-          <button class="btn">generate cars</button>
+          <button class="btn" id="create-btn">generate cars</button>
         </div>
       </div>
     </div>
