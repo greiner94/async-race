@@ -1,5 +1,4 @@
 import carAnimation from './carAnimation';
-import getAllCars from './services/getAllCars';
 import startDrive from './services/startDrive';
 import startEngine from './services/startEngine';
 import { IstartEngine } from './types';
@@ -7,16 +6,23 @@ function startRace() {
   const raceBtn = document.querySelector('#race-btn') as HTMLButtonElement;
 
   raceBtn.addEventListener('click', async () => {
-    const carsArr = await getAllCars().then((res) => res);
-    const allCarsId = carsArr.map((car) => car.id);
-    const promiseArr: Promise<IstartEngine>[] = [];
-    allCarsId.forEach((carId) => {
-      promiseArr.push(startEngine(carId, 'started'));
+    const carsElems = Array.from(document.querySelectorAll('.car-elem:not(.hide)'));
+    const carsIds: number[] = [];
+    carsElems.forEach((carElem) => {
+      carsIds.push(Number(carElem.getAttribute('data-id')));
+
+      const startBtn = carElem.querySelector('.car-elem__btn_start') as HTMLElement;
+      startBtn.setAttribute('disabled', 'true');
+      const stopBtn = carElem.querySelector('.car-elem__btn_stop') as HTMLElement;
+      stopBtn.removeAttribute('disabled');
     });
+
+    const promiseArr: Promise<IstartEngine>[] = [];
+    carsIds.forEach((carId) => promiseArr.push(startEngine(carId, 'started')));
     const carsData = await Promise.all(promiseArr).then((carsData) => carsData);
     carsData.forEach((carInfo, index) => {
-      startDrive(allCarsId[index]).catch(() => carAnimation(allCarsId[index], 0));
-      carAnimation(allCarsId[index], carInfo.velocity);
+      startDrive(carsIds[index]).catch(() => carAnimation(carsIds[index], 0));
+      carAnimation(carsIds[index], carInfo.velocity);
     });
   });
 }

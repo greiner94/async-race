@@ -1,6 +1,6 @@
 function carAnimation(id: number, velocity: number) {
-  const carList = document.querySelectorAll('.car-elem') as NodeListOf<HTMLElement>;
-  const roadElem = document.querySelector('.car-elem__start') as HTMLElement;
+  const carList = document.querySelectorAll('.car-elem:not(.hide)') as NodeListOf<HTMLElement>;
+  const roadElem = carList[0].querySelector('.car-elem__start') as HTMLElement;
   const roadLength = parseInt(window.getComputedStyle(roadElem).getPropertyValue('width'));
   let reqId = 0;
   let carImg = document.createElement('div');
