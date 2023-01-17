@@ -23,18 +23,18 @@ function carAnimation(id: number, velocity: number) {
 
   function animateCar() {
     reqId = requestAnimationFrame(animateCar);
-    const left = parseInt(carImg.style.left || '0');
+    const left = parseInt(carImg.style.transform.slice(11, carImg.style.transform.indexOf('px')) || '0');
     switch (carImg.getAttribute('data-status')) {
       case 'stop':
         cancelAnimationFrame(reqId);
-        carImg.style.left = '0px';
+        carImg.style.transform = 'translateX(0px);';
         break;
       case 'broke':
         cancelAnimationFrame(reqId);
         break;
       case 'drive':
         if (left < roadLength - 110) {
-          carImg.style.left = left + velocity * (roadLength / 23000) + 'px';
+          carImg.style.transform = `translateX(${left + (velocity * roadLength) / 50000}px)`;
         } else {
           cancelAnimationFrame(reqId);
         }

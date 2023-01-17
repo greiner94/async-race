@@ -19,8 +19,8 @@ function renderGarage() {
           <button type="submit" disabled class="btn">update</button>
         </form>
         <div class="control__main-btns">
-          <button class="btn btn_main">race</button>
-          <button class="btn btn_main">reset</button>
+          <button class="btn btn_main" id="race-btn">race</button>
+          <button class="btn btn_main" id="reset-btn">reset</button>
           <button class="btn" id="create-btn">generate cars</button>
         </div>
       </div>

@@ -12,7 +12,7 @@ function generateName(carNameList1: string[], carNameList2: string[]) {
 function generateColor() {
   const possibleSymbolList = ['a', 'b', 'c', 'd', 'e', 'f', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
   const randomizeSymbolList = possibleSymbolList.sort(() => Math.random() - 0.5);
-  const generatedNewColor = '#' + randomizeSymbolList.filter((symbol, index) => index < 6).join('');
+  const generatedNewColor = '#' + randomizeSymbolList.join('').slice(0, 6);
   return generatedNewColor;
 }
 
@@ -20,14 +20,12 @@ function generateCars() {
   const createBtn = document.querySelector('#create-btn') as HTMLElement;
 
   createBtn.addEventListener('click', () => {
-    const PromiseArr = [];
+    const promiseArr = [];
 
     for (let i = 0; i < 100; i++) {
-      PromiseArr.push(createCar(generateName(carNameList1, carNameList2), generateColor()));
+      promiseArr.push(createCar(generateName(carNameList1, carNameList2), generateColor()));
     }
-    Promise.all(PromiseArr).then(() => {
-      renderCarsList();
-    });
+    Promise.all(promiseArr).then(renderCarsList);
   });
 }
 

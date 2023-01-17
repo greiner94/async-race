@@ -5,8 +5,10 @@ import createCarForm from './createCarForm';
 import generateCars from './generateCars';
 import renderCarsList from './renderCarsList';
 import renderGarage from './renderGarage';
+import startRace from './startRace';
 
 renderGarage();
 renderCarsList();
 createCarForm();
 generateCars();
+startRace();
