@@ -27,7 +27,7 @@ function carAnimation(id: number, velocity: number) {
     switch (carImg.getAttribute('data-status')) {
       case 'stop':
         cancelAnimationFrame(reqId);
-        carImg.style.transform = 'translateX(0px);';
+        carImg.style.transform = 'translateX(0px)';
         break;
       case 'broke':
         cancelAnimationFrame(reqId);
