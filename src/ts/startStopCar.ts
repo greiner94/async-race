@@ -17,7 +17,7 @@ function startStopCar() {
         stopBtn.removeAttribute('disabled');
 
         startEngine(carId, 'started').then((res) => {
-          startDrive(carId);
+          startDrive(carId).catch(() => carAnimation(carId, 0));
           carAnimation(carId, res.velocity);
         });
       }
@@ -33,7 +33,7 @@ function startStopCar() {
       startBtn.removeAttribute('disabled');
 
       startEngine(carId, 'stopped').then(() => {
-        carAnimation(carId, 0);
+        carAnimation(carId, -1);
       });
     });
   });

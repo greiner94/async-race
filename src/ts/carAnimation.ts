@@ -7,10 +7,15 @@ function carAnimation(id: number, velocity: number) {
   carList.forEach((carElem) => {
     if (carElem.getAttribute('data-id') == id.toString()) {
       carImg = carElem.querySelector('.car-elem__car') as HTMLDivElement;
-      if (velocity == 0) {
-        carImg.setAttribute('stop', 'true');
-      } else {
-        carImg.removeAttribute('stop');
+      switch (velocity) {
+        case -1:
+          carImg.setAttribute('data-status', 'stop');
+          break;
+        case 0:
+          carImg.setAttribute('data-status', 'broke');
+          break;
+        default:
+          carImg.setAttribute('data-status', 'drive');
       }
       animateCar();
     }
@@ -19,15 +24,20 @@ function carAnimation(id: number, velocity: number) {
   function animateCar() {
     reqId = requestAnimationFrame(animateCar);
     const left = parseInt(carImg.style.left || '0');
-    if (carImg.getAttribute('stop')) {
-      cancelAnimationFrame(reqId);
-      carImg.style.left = '0px';
-      return;
-    }
-    if (left < roadLength - 110) {
-      carImg.style.left = left + velocity * (roadLength / 20000) + 'px';
-    } else {
-      cancelAnimationFrame(reqId);
+    switch (carImg.getAttribute('data-status')) {
+      case 'stop':
+        cancelAnimationFrame(reqId);
+        carImg.style.left = '0px';
+        break;
+      case 'broke':
+        cancelAnimationFrame(reqId);
+        break;
+      case 'drive':
+        if (left < roadLength - 110) {
+          carImg.style.left = left + velocity * (roadLength / 23000) + 'px';
+        } else {
+          cancelAnimationFrame(reqId);
+        }
     }
   }
 }
