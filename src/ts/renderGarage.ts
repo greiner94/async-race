@@ -36,6 +36,13 @@ function renderGarage() {
       </div>
     </div>
   </div>
+
+  <div class="winner-message hide">
+    <div class="winner-message__wrapper">
+      Winner is: <span>BMW</span>! <br>
+      It's time: <span>3.123</span> seconds
+    </div>
+  </div>
   `;
 }
 

@@ -34,8 +34,9 @@ function carAnimation(id: number, velocity: number) {
         break;
       case 'drive':
         if (left < roadLength - 110) {
-          carImg.style.transform = `translateX(${left + (velocity * roadLength) / 50000}px)`;
+          carImg.style.transform = `translateX(${left + (velocity * roadLength * 1.2) / 50000}px)`;
         } else {
+          carImg.setAttribute('data-status', 'finish');
           cancelAnimationFrame(reqId);
         }
     }
