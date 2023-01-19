@@ -3,6 +3,7 @@ import '../index.html';
 
 import createCarForm from './createCarForm';
 import generateCars from './generateCars';
+import pageSwitcher from './pageSwitcher';
 import renderCarsList from './renderCarsList';
 import renderGarage from './renderGarage';
 import resetRace from './resetRace';
@@ -14,3 +15,4 @@ createCarForm();
 generateCars();
 startRace();
 resetRace();
+pageSwitcher();

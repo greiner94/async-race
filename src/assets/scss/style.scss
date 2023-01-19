@@ -17,7 +17,7 @@ body {
 }
 
 .control-wrapper {
-
+    margin-top: 50px;
 }
 .location {
     display: flex;
@@ -57,9 +57,6 @@ body {
     }
 }
 .control {
-
-		margin-top: 50px;
-
 		&__input-wrapper {
             margin: 10px 0;
             display: flex;
