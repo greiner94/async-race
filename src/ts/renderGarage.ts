@@ -47,9 +47,45 @@ function renderGarage() {
   </div>
   <div class="winners hide">
     <div class="list">
-      <div class="list__title">Garage (<span>0</span>)</div>
+      <div class="list__title">Winners (<span>0</span>)</div>
       <div class="list__page">Page #<span>1</span></div>
-      <div class="list__winners">
+      <div class="win-table">
+        <div class="win-table__head">
+          <div class="win-table__head-elem">
+            Number
+          </div>
+          <div class="win-table__head-elem">
+            Car
+          </div>
+          <div class="win-table__head-elem">
+            Name
+          </div>
+          <div class="win-table__head-elem" id="winner-head-wins">
+            Wins
+          </div>
+          <div class="win-table__head-elem" id="winner-head-time">
+            Best time (sec)
+          </div>
+        </div>
+        <div class="win-table__body-wrapper">
+          <div class="win-table__body">
+            <div class="win-table__body-elem">
+              1
+            </div>
+            <div class="win-table__body-elem">
+              #FFF
+            </div>
+            <div class="win-table__body-elem">
+              BMW
+            </div>
+            <div class="win-table__body-elem">
+              3
+            </div>
+            <div class="win-table__body-elem">
+              2.89
+            </div>
+          </div>
+        </div>
       </div>
       <div class="pagination" id="cars-pagination">
         <button class="btn btn_back">< back</button>

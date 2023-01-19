@@ -1,10 +1,10 @@
-function pagination() {
-  const listWrapper = document.querySelector('.list__cars') as HTMLElement;
+function pagination(wrapper: string, backSelector: string, nextSelector: string, listPage: string, maxPage: number) {
+  const listWrapper = document.querySelector(wrapper) as HTMLElement;
   const listElems = Array.from(listWrapper.children);
-  const backBtn = document.querySelector('#cars-pagination .btn_back') as HTMLElement;
-  const nextBtn = document.querySelector('#cars-pagination .btn_next') as HTMLElement;
-  const pageNumber = document.querySelector('.list__page span') as HTMLElement;
-  const maxOnPage = 7;
+  const backBtn = document.querySelector(backSelector) as HTMLElement;
+  const nextBtn = document.querySelector(nextSelector) as HTMLElement;
+  const pageNumber = document.querySelector(listPage) as HTMLElement;
+  const maxOnPage = maxPage;
   let currPage = 0;
 
   function showElems(page: number) {
@@ -20,7 +20,6 @@ function pagination() {
     });
   }
   showElems(1);
-
   nextBtn.addEventListener('click', () => showElems(1));
   backBtn.addEventListener('click', () => showElems(-1));
 }

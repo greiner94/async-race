@@ -44,7 +44,7 @@ function renderCarsList() {
     (document.querySelector('.list__title span') as HTMLElement).textContent = carsAmount.toString();
     removeCarFromList();
     updateCarFromList();
-    pagination();
+    pagination('.list__cars', '#cars-pagination .btn_back', '#cars-pagination .btn_next', '.list__page span', 7);
     startStopCar();
   });
 }
