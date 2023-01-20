@@ -290,7 +290,33 @@ body {
         background: #b26e50;
     }
 
-    // .win-table__head-elem
+    #winner-head-wins, #winner-head-time {
+        cursor: pointer;
+        &[sort-order='DESC'] {
+            &::after {
+                content: '';
+                margin-bottom: 3px;
+                border: solid #fff;
+                border-width: 0 3px 3px 0;
+                display: inline-block;
+                padding: 3px;
+                transform: rotate(45deg);
+
+            }
+        }
+        &[sort-order='ASC'] {
+            &::after {
+                content: '';
+                margin-bottom: 0px;
+                border: solid #fff;
+                border-width: 0 3px 3px 0;
+                display: inline-block;
+                padding: 3px;
+                transform: rotate(-135deg);
+            }
+        }
+    }
+
 
     &__head-elem {
         width: 20%;

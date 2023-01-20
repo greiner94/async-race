@@ -8,6 +8,8 @@ import renderCarsList from './renderCarsList';
 import renderGarage from './renderGarage';
 import resetRace from './resetRace';
 import startRace from './startRace';
+import sortingWinners from './winnerResults/sortingWinners';
+import winnersRendering from './winnerResults/winnersRendering';
 
 renderGarage();
 renderCarsList();
@@ -16,3 +18,5 @@ generateCars();
 startRace();
 resetRace();
 pageSwitcher();
+winnersRendering();
+sortingWinners();

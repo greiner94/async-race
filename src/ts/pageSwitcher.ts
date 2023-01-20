@@ -1,4 +1,4 @@
-import winnerResults from './winnerResults';
+import winnersRendering from './winnerResults/winnersRendering';
 
 function pageSwitcher() {
   const garageBtn = document.querySelector('#garage-page');
@@ -14,7 +14,7 @@ function pageSwitcher() {
     if (target == winnerBtn) {
       garagePage?.classList.add('hide');
       winnerPage?.classList.remove('hide');
-      winnerResults();
+      winnersRendering();
     } else {
       garagePage?.classList.remove('hide');
       winnerPage?.classList.add('hide');
