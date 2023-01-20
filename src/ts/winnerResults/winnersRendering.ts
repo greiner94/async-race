@@ -2,9 +2,11 @@ import carImg from '../carImg';
 import pagination from '../pagination';
 import getAllCars from '../services/getAllCars';
 import getAllWinners from '../services/winners/getAllWinners';
+import sortingLoadSaved from './sortingLoadSaved';
 
 async function winnersRendering(sortType?: 'time' | 'wins', sortOrder?: 'ASC' | 'DESC') {
-  const winnersList = await getAllWinners(sortType, sortOrder).then((res) => res);
+  const { savedSortType, savedSortOrder } = sortingLoadSaved();
+  const winnersList = await getAllWinners(sortType || savedSortType, sortOrder || savedSortOrder).then((res) => res);
   const carsList = await getAllCars().then((res) => res);
 
   const winnersFullInfo = winnersList.map((winner) => {
@@ -39,7 +41,6 @@ async function winnersRendering(sortType?: 'time' | 'wins', sortOrder?: 'ASC' | 
 
   const winnersAmount = winnersFullInfo.length;
   (document.querySelector('.winners .list__title span') as HTMLElement).textContent = winnersAmount.toString();
-
   pagination(
     '.win-table__body-wrapper',
     '.winners #cars-pagination .btn_back',
